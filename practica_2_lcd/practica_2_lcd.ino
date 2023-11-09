@@ -49,17 +49,19 @@ int value = 0;
 
 LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
 
-void setup() {
+void setup()
+{
   // set up the LCD's number of columns and rows:
   lcd.begin(16, 2);
   lcd.setCursor(0, 0);
   lcd.print("0: 100530248");
   // Print a message to the LCD.
 
-  pinMode(inputPin, INPUT);    // sets the digital pin 7 as input
+  pinMode(inputPin, INPUT); // sets the digital pin 7 as input
 }
 
-void loop() {
+void loop()
+{
   // set the cursor to column 0, line 1
   // (note: line 1 is the second row, since counting begins with 0):
   lcd.setCursor(0, 1);
@@ -68,14 +70,16 @@ void loop() {
 
   value = digitalRead(inputPin);
 
-  if (value) {
+  if (value)
+  {
     lcd.clear();
     lcd.setCursor(0, 0);
     lcd.print("Limpiando...");
     delay(2000);
   }
-  else {
+  else
+  {
     lcd.setCursor(0, 0);
     lcd.print("0: 100530248");
   }
-} 
+}
